@@ -1,0 +1,15 @@
+#map {
+  width: 416px;
+  height: 416px;
+  background-color: bisque;
+  line-height: 0px;
+}
+
+.item {
+  width: 32px;
+  height: 32px;
+}
+
+img {
+  margin: 0px;
+}
