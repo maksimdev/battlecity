@@ -1,0 +1,13 @@
+{
+  "name": "battlecity",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && npm run server",
+    "build": "cd client && npm run build",
+    "bs": "npm run build && npm run start"
+  },
+  "author": "",
+  "license": "ISC"
+}
