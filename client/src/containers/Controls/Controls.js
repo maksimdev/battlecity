@@ -1,9 +1,30 @@
 import React from 'react';
 import './Controls.css';
 
-export default function Controls(props) {
+import { store } from '../../redux/store';
+import { moveUp, moveRight, moveDown, moveLeft } from '../../redux/control';
 
-  const handleKeyPress = ({key}) => console.log(key);
+function Controls(props) {
+  
+  const handleKeyPress = ({key}) => {
+    switch (key) {
+      case 'ArrowUp':
+        store.dispatch(moveUp());
+      break;
+      case 'ArrowRight':
+        store.dispatch(moveRight());
+      break;
+      case 'ArrowDown':
+        store.dispatch(moveDown());
+      break;
+      case 'ArrowLeft':
+        store.dispatch(moveLeft());
+      break;
+      default:
+      break;
+    }
+  }
+
   document.addEventListener('keydown', handleKeyPress);
   
   return (
@@ -13,3 +34,5 @@ export default function Controls(props) {
     </div>
   )
 }
+
+export default Controls;

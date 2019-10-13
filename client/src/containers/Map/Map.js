@@ -1,17 +1,29 @@
 import React from 'react';
+import { connect } from "react-redux";
 import './Map.css';
+import UserMap from './UserMap';
 
-function Map({ initMap }) {
+const mapStateToProps = state => ({
+  map: state.map.map
+});
 
-  const createItem = ({ position: { x, y }, img}) => {
-    return <img className='item' alt='' id={`${x}:${y}`} key={`${x}:${y}`} src={img}></img>
+function ConnectedMap({ map }) {
+
+  console.log('state: ', map);
+  const createItem = ({ type, position: { x, y }, img}) => {
+    return <img className={`item ${type}`} alt='' id={`${x}:${y}`} key={`${x}:${y}`} src={img}></img>
   }
 
   return (
-    <div id="map" className="map">
-      {initMap().map((items) => items.map((item) => createItem(item)))}
+    <div>
+      <UserMap />
+      <div id="map" className="map">
+        {map.map((items) => items.map((item) => createItem(item)))}
+      </div>
     </div>
   );
 }
+
+const Map = connect(mapStateToProps)(ConnectedMap);
 
 export default Map;

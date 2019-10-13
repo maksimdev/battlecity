@@ -7,12 +7,12 @@ import trees from './images/trees.png';
 import wall from './images/wall.png';
 import water from './images/water.png';
 
-const createEmpty = (x, y) => ({id: 0, position: { x: x, y: y }, img: empty })
-const createBricks = (x, y) => ({ id: 1, position: { x: x, y: y }, img: bricks });
-const createTrees = (x, y) => ({ id: 2, position: { x: x, y: y }, img: trees });
-const createIce = (x, y) => ({ id: 3, position: { x: x, y: y }, img: ice });
-const createWall = (x, y) => ({ id: 4, position: { x: x, y: y }, img: wall });
-const createWater = (x, y) => ({ id: 5, position: { x: x, y: y }, img: water });
+const createEmpty = (x, y) => ({id: 0, type: 'empty', position: { x, y }, img: empty })
+const createBricks = (x, y) => ({ id: 1, type: 'bricks', position: { x, y }, img: bricks });
+const createTrees = (x, y) => ({ id: 2, type: 'trees', position: { x, y }, img: trees });
+const createIce = (x, y) => ({ id: 3, type: 'ice', position: { x, y }, img: ice });
+const createWall = (x, y) => ({ id: 4, type: 'wall', position: { x, y }, img: wall });
+const createWater = (x, y) => ({ id: 5, type: 'water', position: { x, y }, img: water });
 
 export const createItem = (id, x, y) => {
   switch (id) {
