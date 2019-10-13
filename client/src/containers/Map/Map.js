@@ -3,13 +3,13 @@ import './Map.css';
 
 function Map({ initMap }) {
 
-  const createItem = (item, x, y) => {
-    return <img className='item' alt={`${x}:${y}`} id={`${x}:${y}`} key={`${x}:${y}`} src={item}></img>
+  const createItem = ({ position: { x, y }, img}) => {
+    return <img className='item' alt='' id={`${x}:${y}`} key={`${x}:${y}`} src={img}></img>
   }
 
   return (
     <div id="map" className="map">
-      {initMap().map((items, x) => items.map((item, y) => createItem(item.img, x, y)))}
+      {initMap().map((items) => items.map((item) => createItem(item)))}
     </div>
   );
 }
